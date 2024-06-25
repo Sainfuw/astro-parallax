@@ -1,0 +1,96 @@
+---
+import desertNoSky from "../images/about/desert-NoSky.png";
+import desertMoon from "../images/about/desert-moon.png";
+import desertRock from "../images/about/desert-rock.png";
+import desertSky from "../images/about/desert-sky.png";
+import grass from "../images/about/grass.png";
+import man from "../images/about/man.png";
+import water from "../images/about/water.png";
+import waterfall from "../images/about/waterfall.png";
+---
+
+<style>
+  section {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  section img {
+    position: absolute;
+    object-fit: cover;
+    pointer-events: none;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 1008;
+  }
+
+  #waterfall {
+    top: -200px;
+    z-index: 1007;
+  }
+
+  #grass {
+    z-index: 1008;
+  }
+
+  #desert-moon {
+    z-index: 1008;
+    mix-blend-mode: screen;
+  }
+
+  section article {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 50%;
+    z-index: 1009;
+    background-color: var(--bg-color);
+  }
+
+  section article h2 {
+    margin-top: 1rem;
+    font-size: 2.5rem;
+  }
+
+  section article p {
+    margin: 0.5rem 0 1.5rem 0;
+  }
+</style>
+
+<section id="about">
+  <article>
+    <h2>About Us</h2>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque provident
+      cupiditate nobis vitae ducimus dignissimos, accusantium eaque animi esse
+      enim, blanditiis et, eos mollitia consectetur nesciunt minus similique
+      expedita libero.
+    </p>
+    <a href="#" class="btn">Read More!</a>
+  </article>
+  <img src={waterfall.src} alt="waterfall" id="waterfall" />
+  <img src={desertSky.src} alt="desert-sky" id="desert-sky" />
+  <img src={desertMoon.src} alt="desert-moon" id="desert-moon" />
+  <img src={desertNoSky.src} alt="desert-NoSky" id="desert-NoSky" />
+  <img src={desertRock.src} alt="desert-rock" id="desert-rock" />
+  <img src={water.src} alt="water" id="water" />
+  <img src={man.src} alt="man" id="man" />
+  <img src={grass.src} alt="grass" id="grass" />
+</section>
+
+<script>
+  let desertMoon = document.getElementById("desert-moon");
+  let man = document.getElementById("man");
+
+  if (desertMoon && man) {
+    document.addEventListener("scroll", () => {
+      let value = window.scrollY;
+      desertMoon.style.top = value * 0.3 + "px";
+      man.style.left = value * 0.6 + "px";
+    });
+  }
+</script>

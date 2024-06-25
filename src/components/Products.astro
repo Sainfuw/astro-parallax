@@ -1,0 +1,127 @@
+---
+import { Image } from "astro:assets";
+
+import salmon from "../images/products/salmon.png";
+import snapper from "../images/products/snapper.png";
+import swordfish from "../images/products/swordfish.png";
+import tuna from "../images/products/tuna.png";
+---
+
+<style>
+  section {
+    position: relative;
+    height: 100vh;
+    margin-top: 84px;
+    background-color: var(--bg-ocean);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  section h2 {
+    font-size: 3rem;
+    padding: 6rem 0 1rem 0;
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .product-cards {
+    width: 80%;
+    margin: auto;
+    padding-bottom: 5rem;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .card {
+    padding: 2rem 1rem;
+    border: 2px solid var(--bg-lightcolor);
+    text-align: center;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .card:hover {
+    box-shadow: 0 0 1rem var(--bg-lightcolor);
+  }
+
+  .price-name h3 {
+    font-size: 2rem;
+    font-weight: 400;
+  }
+
+  .price-name p {
+    font-size: 1.5rem;
+  }
+
+  .price-name p span {
+    color: var(--bg-lightcolor);
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  .card img {
+    margin-top: -4rem;
+    filter: drop-shadow(0 0 0.5rem var(--bg-lightcolor));
+  }
+</style>
+
+<section id="products">
+  <h2>Our Products</h2>
+  <div class="product-cards">
+    <div class="card">
+      <Image src={salmon} alt="salmon" width={150} height={150} />
+      <div class="info">
+        <div class="price-name">
+          <h3>Salmon</h3>
+          <p>$<span>120</span></p>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+      <a href="#" class="btn">Go Shop</a>
+    </div>
+
+    <div class="card">
+      <Image src={snapper} alt="snapper" width={150} height={150} />
+      <div class="info">
+        <div class="price-name">
+          <h3>Snapper</h3>
+          <p>$<span>140</span></p>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+      <a href="#" class="btn">Go Shop</a>
+    </div>
+
+    <div class="card">
+      <Image src={swordfish} alt="swordfish" width={150} height={150} />
+      <div class="info">
+        <div class="price-name">
+          <h3>SwordFish</h3>
+          <p>$<span>100</span></p>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+      <a href="#" class="btn">Go Shop</a>
+    </div>
+
+    <div class="card">
+      <Image src={tuna} alt="tuna" width={150} height={150} />
+      <div class="info">
+        <div class="price-name">
+          <h3>Tuna</h3>
+          <p>$<span>180</span></p>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+      <a href="#" class="btn">Go Shop</a>
+    </div>
+  </div>
+</section>

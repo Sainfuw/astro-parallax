@@ -1,0 +1,74 @@
+---
+import centerCity from "../images/home/center-city.png";
+import hillLeft from "../images/home/hill-left-1.png";
+import hillRight from "../images/home/hill-right-1.png";
+import leftCity from "../images/home/left-city.png";
+import moon from "../images/home/moon.png";
+import rail from "../images/home/rail.png";
+import rightCity from "../images/home/right-city.png";
+import sky from "../images/home/sky.png";
+import train from "../images/home/train.png";
+import water from "../images/home/water.png";
+---
+
+<style>
+  section {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  section img {
+    position: absolute;
+    object-fit: cover;
+    pointer-events: none;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 1006;
+  }
+
+  section h1 {
+    position: absolute;
+    font-size: 3.5rem;
+    text-shadow: 2px 10px 4px var(--bg-color);
+    bottom: 0;
+    left: 10rem;
+    z-index: 1006;
+  }
+
+  section img#moon {
+    mix-blend-mode: screen;
+  }
+</style>
+
+<section id="home">
+  <img src={sky.src} alt="sky" id="sky" />
+  <img src={moon.src} alt="moon" id="moon" />
+  <img src={water.src} alt="water" id="water" />
+  <img src={centerCity.src} alt="center-city" id="center-city" />
+  <img src={rightCity.src} alt="right-city" id="right-city" />
+  <img src={leftCity.src} alt="left-city" id="left-city" />
+  <img src={train.src} alt="train" id="train" />
+  <img src={rail.src} alt="rail" id="rail" />
+  <h1 id="text">Parallax Website</h1>
+  <img src={hillLeft.src} alt="hill-left-1" id="hill-left-1" />
+  <img src={hillRight.src} alt="hill-right-1" id="hill-right-1" />
+</section>
+
+<script>
+  let moon = document.getElementById("moon");
+  let text = document.getElementById("text");
+  let train = document.getElementById("train");
+
+  if (moon && text && train) {
+    window.addEventListener("scroll", () => {
+      let value = window.scrollY;
+      moon.style.top = -90 + value * 0.8 + "px";
+      text.style.top = 90 + value * -0.2 + "%";
+      train.style.left = value * 1.5 + "px";
+    });
+  }
+</script>

@@ -1,0 +1,58 @@
+---
+
+---
+
+<style>
+  header {
+    padding: 25px 10%;
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1008;
+  }
+
+  .logo {
+    font-size: 2rem;
+    color: var(--bg-lightcolor);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  ul.navlist {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+
+  ul.navlist li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 5px 12px;
+    border: 2px solid var(--bg-lightcolor);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+  }
+
+  ul.navlist li a:hover,
+  ul.navlist li a.active {
+    box-shadow: 0 0 1rem var(--bg-lightcolor);
+    background-color: var(--bg-lightcolor);
+    color: var(--bg-color);
+  }
+</style>
+
+<header>
+  <a href="#" class="logo">Logo</a>
+  <ul class="navlist">
+    <li><a href="#home" class="active" id="button-home">Home</a></li>
+    <li><a href="#about" id="button-about">About</a></li>
+    <li><a href="#products" id="button-products">Products</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</header>

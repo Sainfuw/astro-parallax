@@ -1,0 +1,90 @@
+---
+import About from "../components/About.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Home from "../components/Home.astro";
+import Products from "../components/Products.astro";
+---
+
+<style is:global>
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --bg-color: #1d002c;
+    --bg-scrollcolor: #194eb9;
+    --bg-lightcolor: #67ccff;
+    --bg-ocean: #121137;
+  }
+
+  ::-webkit-scrollbar {
+    height: 0.1rem;
+    width: 0.6rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: linear-gradient(
+      0,
+      rgba(29, 0, 44, 1) 0%,
+      rgba(103, 204, 255, 1) 50%,
+      rgba(29, 0, 44, 1) 100%
+    );
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      0deg,
+      rgba(25, 78, 185, 1) 0%,
+      rgba(103, 204, 255, 1) 50%,
+      rgba(25, 78, 185, 1) 100%
+    );
+    border-radius: 5rem;
+  }
+
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--bg-color);
+    color: white;
+    overflow-x: hidden;
+  }
+
+  .btn {
+    background-color: var(--bg-lightcolor);
+    color: var(--bg-color);
+    text-decoration: none;
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--bg-lightcolor);
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .btn:hover {
+    box-shadow: 0 0 1rem var(--bg-lightcolor);
+    background-color: var(--bg-color);
+    color: var(--bg-lightcolor);
+  }
+</style>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Parallax Effect</title>
+  </head>
+  <body>
+    <Header />
+    <Home />
+    <About />
+    <Products />
+    <Footer />
+  </body>
+</html>
