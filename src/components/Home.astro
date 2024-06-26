@@ -59,13 +59,13 @@ import water from "../images/home/water.png";
 </section>
 
 <script>
-  let moon = document.getElementById("moon");
-  let text = document.getElementById("text");
-  let train = document.getElementById("train");
+  const moon = document.getElementById("moon");
+  const text = document.getElementById("text");
+  const train = document.getElementById("train");
 
   if (moon && text && train) {
     window.addEventListener("scroll", () => {
-      let value = window.scrollY;
+      const value = window.scrollY;
       moon.style.top = -90 + value * 0.8 + "px";
       text.style.top = 90 + value * -0.2 + "%";
       train.style.left = value * 1.5 + "px";
